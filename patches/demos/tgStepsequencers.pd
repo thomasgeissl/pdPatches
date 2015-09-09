@@ -1,0 +1,9 @@
+#N canvas 699 162 539 400 10;
+#X obj 160 153 tgStepsequencer8;
+#X obj 240 246 tgStepsequencer2;
+#X obj 8 11 tgDSP;
+#X obj 162 246 tgStepsequencer4;
+#X obj 161 43 tgMetro 500;
+#X connect 0 0 3 0;
+#X connect 0 1 1 0;
+#X connect 4 0 0 0;

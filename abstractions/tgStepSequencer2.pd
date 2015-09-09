@@ -1,0 +1,23 @@
+#N canvas 207 84 599 476 10;
+#X obj 415 173 counter;
+#X obj 366 63 inlet;
+#X obj 421 63 inlet;
+#X obj 415 322 outlet;
+#X obj 461 322 outlet;
+#X obj 416 249 sel 0 1;
+#X obj 415 193 % 2;
+#X obj 103 103 cnv 15 54 54 empty empty Steps.2 0 5 0 14 -233017 -66577
+0;
+#X obj 103 138 hradio 10 1 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 103 125 tgl 10 0 empty empty Rev. 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 9 0;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 6 0 8 0;
+#X connect 8 0 5 0;
+#X connect 9 0 0 1;
+#X coords 0 -1 1 1 60 60 2 100 100;

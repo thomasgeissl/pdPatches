@@ -1,0 +1,63 @@
+#N canvas 284 82 948 528 10;
+#X declare -lib mrpeach;
+#X obj 52 33 tgDSP;
+#X obj 698 18 import mrpeach;
+#X obj 482 353 packOSC;
+#X obj 659 419 udpsend;
+#X msg 659 353 connect 127.0.0.1 9000;
+#X msg 698 376 disconnect;
+#X obj 659 460 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 682 459 connected;
+#X obj 91 235 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 55 90 adc~;
+#X obj 420 555 fiddle~ 1024 1 20 3;
+#X text 555 555 ------ arguments:;
+#X obj 430 565 fiddle~ 1024 1 20 3;
+#X text 565 565 ------ arguments:;
+#X obj 420 555 fiddle~ 1024 1 20 3;
+#X obj 430 565 fiddle~ 1024 1 20 3;
+#X obj 55 162 fiddle~ 1024 1 20 3;
+#X floatatom 55 234 5 0 0 0 - - -;
+#X msg 219 106 auto \$1;
+#X obj 219 59 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 274 107 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 274 145 spigot;
+#X obj 307 88 expr 1 - $f1;
+#X obj 659 287 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 92 252 attack;
+#X text 56 252 pitch;
+#X floatatom 139 234 5 0 0 0 - - -;
+#X text 476 698 amplitude;
+#X text 486 713 (dB);
+#X text 139 252 amplitude;
+#X msg 482 324 sendTyped /beatDetected N;
+#X text 43 446 TODO: send amplited and pitch when beat detected;
+#X text 44 472 TODO: https://puredata.info/community/conventions/convention09/figueiro.pdf
+;
+#X obj 659 318 moses 1;
+#X text 43 435 TODO: bonker?;
+#X text 44 459 TODO: specify different frequency bands;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 9 0 16 0;
+#X connect 16 0 17 0;
+#X connect 16 1 8 0;
+#X connect 16 1 30 0;
+#X connect 16 3 26 0;
+#X connect 18 0 16 0;
+#X connect 19 0 18 0;
+#X connect 19 0 22 0;
+#X connect 20 0 21 0;
+#X connect 21 0 16 0;
+#X connect 22 0 21 1;
+#X connect 23 0 33 0;
+#X connect 30 0 2 0;
+#X connect 33 0 5 0;
+#X connect 33 1 4 0;
