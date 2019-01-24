@@ -1,0 +1,28 @@
+#N canvas 183 143 864 487 10;
+#X obj 526 394 tgRecorder~;
+#X obj 526 271 tgMaster~;
+#X obj 684 324 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 684 362 open -bytes 4 ~/test.wav;
+#X obj 684 342 t b f;
+#X obj 19 26 tgDSP;
+#X obj 121 26 tgMetro 500;
+#X obj 121 8 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 209 5 500;
+#X msg 243 5 250;
+#X obj 121 95 tgStepsequencer2;
+#X obj 198 95 tgStepsequencer4;
+#X obj 277 95 tgStepsequencer8;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 4 0;
+#X connect 3 0 0 3;
+#X connect 4 0 0 2;
+#X connect 4 1 3 0;
+#X connect 6 0 10 0;
+#X connect 6 0 11 0;
+#X connect 6 0 12 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 1;
+#X connect 9 0 6 1;
